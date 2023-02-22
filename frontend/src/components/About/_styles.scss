@@ -1,0 +1,33 @@
+@import '../../scss/abstracts/_mixins';
+
+.aboutContainer {
+    @include flexMixin(column, nowrap, center, center, relative, 0, 2em);
+    width: 100%;
+    height: 100%;
+
+    .aboutTitle {
+        padding: 0.5em 0;
+        width: 100%;
+        font-size: 2.5rem;
+        color: var(--color-secondary);
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-weight: 800;
+    }
+    .aboutPhoto {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin-bottom: 1em;
+    }
+    .aboutParagraph {
+        width: 100%;
+        font-size: 1.25rem;
+        color: var(--color-primary-variant-2);
+        text-align: center;
+        font-weight: 400;
+        line-height: 1.5em;
+        padding: 1em;
+    }
+}

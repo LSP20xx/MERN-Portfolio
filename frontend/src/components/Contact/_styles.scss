@@ -1,0 +1,81 @@
+@import '../../scss/abstracts/mixins';
+
+.contactContainer {
+    @include flexMixin(column, nowrap, center, center, relative, 0, 2em);
+    width: 100%;
+    height: 100%;
+    .contactTitle {
+        padding: 0.5em 0;
+        width: 100%;
+        font-size: 2.5rem;
+        color: var(--color-secondary);
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-weight: 800;
+    }
+    .contactText {
+        width: 100%;
+        font-size: 1.25rem;
+        color: var(--color-primary-variant-2);
+        text-align: center;
+        font-weight: 400;
+        line-height: 1.5em;
+        padding: 1em 1em 0 1em;
+    }
+    .contactForm {
+        width: 100%;
+        height: 100%;
+        @include flexMixin(column, nowrap, center, center, relative, 0, 2em);
+        .contactFormLabel {
+            width: 100%;
+            font-size: 1.25rem;
+            color: var(--color-secondary);
+            text-align: center;
+            font-weight: 400;
+            line-height: 1.5em;
+            padding: 1em;
+        }
+        .contactFormInput {
+            width: 100%;
+            height: 40px;
+            font-size: 1rem;
+            color: var(--color-dark);
+            background-color: var(--color-primary);
+            text-align: center;
+            line-height: 1.5em;
+            padding: 1em;
+            border: none;
+            border: solid 2px var(--color-dark);
+            border-radius: 0.25%;
+            border-color: var(--color-dark);
+        }
+        .contactFormTextArea {
+            width: 100%;
+            font-size: 1.25rem;
+            color: var(--color-dark);
+            background-color: var(--color-primary);
+            text-align: left;
+            line-height: 1.5em;
+            padding: 1em;
+            height: 200px;
+            border-radius: 0.25%;
+            border-color: var(--color-primary-variant-2);
+        }
+        .contactFormButton {
+            position: relative;
+            display: inline-block;
+            background: var(--color-dark);
+            color: var(--color-primary);
+            border: solid 2px var(--color-primary);
+            width: 93.33px;
+            border-radius: 10px;
+            height: 50px;
+            text-align: center;
+            line-height: 40px;
+            font-size: 1.2rem;
+            margin-top: 1em;
+            
+        }
+    }
+}

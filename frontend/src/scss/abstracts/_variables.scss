@@ -1,0 +1,19 @@
+@import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono);
+
+:root {
+    /* fonts */
+    --font-share-tech-mono: 'Share Tech Mono', monospace;
+
+    /* colors */
+    --color-primary: rgb(250, 132, 132);
+    --color-primary-variant: rgb(231, 25, 94);
+    --color-primary-variant-2: rgb(251, 174, 174);
+    --color-secondary: #e7edee;
+    --color-secondary-variant: #e7edee97;
+    --color-text-shadow: rgba(219, 14, 21, .8);
+    --color-background-first: rgba(2,0,36,1);
+    --color-background-second: rgb(7, 7, 62);
+    --color-background-third: rgb(58, 7, 53);
+    --color-border: rgb(237, 104, 149);
+    --color-dark: rgb(5, 5, 5);
+}

@@ -1,0 +1,23 @@
+@mixin flexMixin($direction, $isWrapped, $justify, $align, $position, $margin, $padding) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $isWrapped;
+    justify-content: $justify;
+    align-items: $align;
+    position: $position;
+    margin: $margin;
+    padding: $padding;
+}
+
+@mixin gridMixin($columns, $rows, $gap, $justify, $align, $position, $margin, $padding) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    grid-template-rows: repeat($rows, 1fr);
+    grid-gap: $gap;
+    justify-content: $justify;
+    align-items: $align;
+    position: $position;
+    margin: $margin;
+    padding: $padding;
+}
+

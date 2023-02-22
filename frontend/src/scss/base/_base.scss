@@ -1,0 +1,21 @@
+html, body {
+    /* fonts */
+    font-family: var(--font-share-tech-mono);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+    font-weight: 800;
+    min-width: 280px;
+    /* colors */
+    color: var(--color-secondary);
+    background: radial-gradient(circle, var(--color-background-first) 0%, var(--color-background-second) 35%, var(--color-background-third) 100%);
+    text-shadow: 0 0 0.3125rem var(--color-text-shadow);
+}
+
+@media screen and (max-width: 496px) {
+    html, body {
+        font-size: 0.90rem;
+    }
+}
+    
+  

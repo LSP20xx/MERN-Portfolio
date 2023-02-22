@@ -1,0 +1,79 @@
+@import '../../scss/abstracts/_mixins';
+
+.footerContainer {
+    padding-top: 0.3125em;
+    height: 25vh;
+    min-width: 160px;
+    section {
+        @include gridMixin(4, 1, 1em, center, center, static, auto, 1.5em 0 0 0);
+        width: 100%;
+        max-width: 360px;
+        i {
+            color: var(--color-primary-variant);
+            font-size: 3rem;
+            margin: auto;
+            &:hover {
+                color: var(--color-secondary);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+/**
+* Style #5
+
+
+.style-5 {
+
+    .nav {
+      transform: translate(100%,-100%) scale(0.5);   
+      border-radius:100%; 
+    }
+  
+    .nav--active .nav {
+      transform: translateY(0) scale(1); 
+      border-radius:0; 
+      width:100%;
+      height:100%;
+    }
+  
+    .nav__link {
+      opacity:0;
+      transition-delay:500ms;
+    }
+  
+    .nav--active .nav__link {
+      opacity:1;
+    }
+  
+    .nav--active .nav__icon {
+      background: rgba(0,0,0,0.0);
+   
+      &:before {
+        margin-top:0;
+        transform:rotate(45deg);
+      }
+  
+      &:after {
+        margin-top:0;
+        transform:rotate(-45deg);
+      }
+    }
+  
+  }
+
+*/
+@media screen and (max-width: 496px) {
+    .footerContainer {
+        @include flexMixin(column, nowrap, center, center, static, auto, 0);
+        section {
+            @include gridMixin(2, 1, 2em, center, center, static, auto, 1.5em 0 0 0);
+
+            width: 160px;
+            i {
+                font-size: 3.3rem;
+            }
+        }
+    }
+}
