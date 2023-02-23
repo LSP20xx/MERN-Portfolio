@@ -8,15 +8,18 @@
         @include gridMixin(4, 1, 1em, center, center, static, auto, 1.5em 0 0 0);
         width: 100%;
         max-width: 360px;
-        i {
+        a {
+          margin: auto;
+          i {
             color: var(--color-primary-variant);
             font-size: 3rem;
-            margin: auto;
             &:hover {
                 color: var(--color-secondary);
                 cursor: pointer;
             }
+          }
         }
+        
     }
 }
 
