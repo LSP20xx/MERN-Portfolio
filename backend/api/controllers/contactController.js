@@ -1,7 +1,14 @@
 'use strict';
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 const xss = require('xss');
 const Contact = require('../models/Contact');
+const mailgun = require('mailgun-js')({
+  apiKey: process.env.MAILGUN_API_KEY,
+  domain: 'sandboxeb4459006235495cabc9738cc8cfa9c2.mailgun.org'
+});
 
 exports.createContact = async (req, res, next) => {
   try {
@@ -20,6 +27,20 @@ exports.createContact = async (req, res, next) => {
       name: sanitizedName,
       email: sanitizedEmail,
       message: sanitizedMessage
+    });
+
+    // Send email via Mailgun
+    const data = {
+      from: process.env.MAILGUN_FROM,
+      to: process.env.MAILGUN_TO,
+      subject: 'New Contact Form Submission',
+      text: `Name: ${sanitizedName}\nEmail: ${sanitizedEmail}\nMessage: ${sanitizedMessage}`
+    };
+    mailgun.messages().send(data, (error, body) => {
+      if (error) {
+        console.log(error);
+      }
+      console.log(body);
     });
 
     res.status(201).json({

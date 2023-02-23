@@ -6,11 +6,10 @@ const mongoose = require('mongoose');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const cors = require('cors');
-
 const contactRouter = require('./api/routes/contact');
 
-const MONGODB_URI = 'mongodb://127.0.0.1:27017/contact_form';
 dotenv.config();
+const MONGODB_URI = `mongodb://${process.env.MONGODB_IP}:${process.env.MONGODB_PORT}/${process.env.MONGODB_USER}`;
 
 const app = express();
 const port = process.env.PORT || 8000;
