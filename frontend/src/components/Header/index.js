@@ -39,6 +39,9 @@ export const Header = () => {
             <Link to="/skills" onClick={handleLinkClick}>Skills</Link>
           </li>
           <li>
+            <Link to="/shopify" onClick={handleLinkClick}>Shopify</Link>
+          </li>
+          <li>
             <Link to="/about" onClick={handleLinkClick}>About</Link>
           </li>
           <li>

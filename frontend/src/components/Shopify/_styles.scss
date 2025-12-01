@@ -1,0 +1,202 @@
+@import '../../scss/abstracts/_mixins';
+
+.shopifyContainer {
+    @include flexMixin(column, nowrap, center, center, relative, 0, 1.5em 0 3em 0);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: var(--color-secondary);
+
+    .shopifyHeader {
+        @include flexMixin(column, nowrap, flex-start, flex-start, relative, 0, 0 1.5em);
+        gap: 0.25em;
+        width: 100%;
+
+        .eyebrow {
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            color: var(--color-primary-variant-2);
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            text-shadow: 0 0 10px var(--color-text-shadow);
+        }
+
+        .lede {
+            color: var(--color-secondary-variant);
+            max-width: 760px;
+            line-height: 1.4;
+        }
+    }
+
+    .shopifyGrid {
+        @include flexMixin(column, nowrap, center, stretch, relative, 0, 0);
+        gap: 1.25em;
+        width: 100%;
+    }
+
+    .shopifyCard {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--color-border);
+        border-radius: 14px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        overflow: hidden;
+        padding: 1.25em;
+        @include gridMixin(2, 1, 1.25em, stretch, start, relative, 0, 0);
+
+        .cardMeta {
+            @include flexMixin(column, nowrap, flex-start, flex-start, relative, 0, 0);
+            gap: 0.75em;
+
+            .brand {
+                font-size: 0.95rem;
+                letter-spacing: 0.15em;
+                text-transform: uppercase;
+                color: var(--color-primary-variant-2);
+            }
+
+            h2 {
+                font-size: 1.6rem;
+                color: var(--color-secondary);
+            }
+
+            .summary {
+                color: var(--color-secondary-variant);
+                line-height: 1.45;
+            }
+
+            .stack {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5em;
+
+                li {
+                    border: 1px solid var(--color-primary-variant);
+                    color: var(--color-primary);
+                    padding: 0.35em 0.7em;
+                    border-radius: 20px;
+                    font-size: 0.85rem;
+                }
+            }
+        }
+
+        .cardDetails {
+            @include flexMixin(column, nowrap, flex-start, flex-start, relative, 0, 0);
+            gap: 0.75em;
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            .featureList {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 0.5em;
+                color: var(--color-secondary-variant);
+
+                li {
+                    position: relative;
+                    padding-left: 1.4em;
+
+                    &::before {
+                        content: '•';
+                        color: var(--color-primary);
+                        position: absolute;
+                        left: 0;
+                    }
+                }
+            }
+
+            .snippetBlock {
+                width: 100%;
+                border: 1px solid var(--color-border);
+                border-radius: 10px;
+                background: rgba(0, 0, 0, 0.45);
+                overflow: hidden;
+
+                .snippetHeader {
+                    @include flexMixin(row, nowrap, space-between, center, relative, 0, 0.75em 1em);
+                    background: rgba(255, 255, 255, 0.04);
+                    border-bottom: 1px solid var(--color-border);
+
+                    span {
+                        letter-spacing: 0.1em;
+                        text-transform: uppercase;
+                        font-size: 0.85rem;
+                        color: var(--color-primary-variant-2);
+                    }
+
+                    button {
+                        color: var(--color-dark);
+                        background: var(--color-primary);
+                        padding: 0.35em 0.9em;
+                        border-radius: 8px;
+                        transition: all 0.2s ease;
+
+                        &:hover {
+                            background: var(--color-primary-variant);
+                            color: var(--color-secondary);
+                        }
+                    }
+                }
+
+                pre {
+                    margin: 0;
+                    padding: 0.9em 1em;
+                    color: var(--color-secondary);
+                    font-size: 0.95rem;
+                    overflow-x: auto;
+                }
+
+                .copyError {
+                    padding: 0 1em 0.75em 1em;
+                    color: var(--color-primary-variant-2);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .shopifyContainer {
+        padding: 1em;
+
+        .shopifyCard {
+            @include gridMixin(1, 1, 1em, stretch, start, relative, 0, 0);
+        }
+    }
+}
+
+@media screen and (max-width: 496px) {
+    .shopifyContainer {
+        .shopifyHeader {
+            h1 {
+                font-size: 1.9rem;
+            }
+            .lede {
+                font-size: 0.95rem;
+            }
+        }
+
+        .shopifyCard {
+            padding: 1em;
+
+            .cardMeta {
+                .summary {
+                    font-size: 0.95rem;
+                }
+            }
+
+            .cardDetails {
+                .featureList {
+                    gap: 0.4em;
+                    li {
+                        font-size: 0.95rem;
+                    }
+                }
+            }
+        }
+    }
+}
